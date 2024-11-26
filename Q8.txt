@@ -1,0 +1,21 @@
+//calculate square root of given number
+
+import java.util.Scanner;
+
+public class squarerooot {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        double number = sc.nextDouble();
+        
+        //to calculate square root
+        double squareroot = Math.sqrt(number);
+        
+        System.out.println("the square root of "+number + " is: "+squareroot);
+
+	}
+
+}

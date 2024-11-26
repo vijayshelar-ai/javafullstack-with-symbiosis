@@ -1,0 +1,26 @@
+// Accept an employees date of joining and get his date of retirement as per the company's posting 58 is the retirement age
+
+import java.time.*;
+import java.util.*;
+
+public class Retirement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter year of joining:");
+		System.out.println("enter year:");
+		int year = sc.nextInt();
+		System.out.println("enter month:");
+		int month = sc.nextInt();
+		System.out.println("enter day:");
+		int day = sc.nextInt();
+
+		LocalDate joiningDate = LocalDate.of(year, month, day);
+		LocalDate retirementDate = joiningDate.plusYears(58);
+		
+		System.out.println("your Date of retirement will be: "+ retirementDate);
+	}
+
+}

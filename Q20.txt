@@ -1,0 +1,34 @@
+// Accept persons Date of birth and calculate age
+
+import java.time.*;
+import java.util.Scanner;
+
+public class AgeCalculator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter date of birth:");
+		System.out.println("enter year:");
+		int year = sc.nextInt();
+		System.out.println("enter month:");
+		int month = sc.nextInt();
+		System.out.println("enter day:");
+		int day = sc.nextInt();
+		
+		LocalDate currentDate = LocalDate.now();
+		LocalDate birthDate = LocalDate.of(year, month, day);
+		
+		if(birthDate.isAfter(currentDate)) {
+			System.out.println("invaid date of birth: \n please enter valid date");
+		}
+		
+		else {
+			Period age= Period.between(birthDate, currentDate);
+			System.out.println("You are "+age.getYears()+" years\n"+age.getMonths()+" months, and\n"+age.getDays()+" days old. ");
+		}
+
+	}
+
+}

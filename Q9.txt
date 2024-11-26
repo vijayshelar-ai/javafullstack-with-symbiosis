@@ -1,0 +1,32 @@
+//find remainder of given number without using % operator
+
+import java.util.Scanner;
+
+public class remainder {
+	
+	public static int calculateremainder(int number, int divisor) {
+		int quotint = number / divisor;
+		int product = quotint * divisor;
+		return number - product;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number: ");
+        int number = sc.nextInt();
+        System.out.print("Enter the divisor: ");
+        int divisor = sc.nextInt();
+        
+        if(divisor == 0) {
+        	System.out.println("divisor cannot be zero.");
+        }
+        
+        else {
+        	int remainder = calculateremainder(number , divisor);
+        	System.out.println("the remaindor of "+ number +" divided by "+ divisor +" is: "+ remainder);
+        }  
+	}
+
+}

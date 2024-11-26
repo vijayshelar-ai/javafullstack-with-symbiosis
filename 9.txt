@@ -1,0 +1,24 @@
+//Remove All Adjacent Duplicates in Given String
+
+public class RemoveAdjacentDuplicates {
+    public static void main(String[] args) {
+        String input = "abccadd";
+        String result = removeAdjacentDuplicates(input);
+        System.out.println("Result after removing adjacent duplicates: " + result);
+    }
+
+    public static String removeAdjacentDuplicates(String s) {
+        StringBuilder stack = new StringBuilder();
+
+        for (char c : s.toCharArray()) {
+            int length = stack.length();
+            if (length > 0 && stack.charAt(length - 1) == c) {
+                stack.deleteCharAt(length - 1);
+            } else {
+                stack.append(c);
+            }
+        }
+
+        return stack.toString();
+    }
+}

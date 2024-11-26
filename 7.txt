@@ -1,0 +1,16 @@
+//Define Two Strings as Value and Search Value, Return the Index of the First Character from the Search Value String in the Values String
+
+
+public class FindStringIndex {
+    public static void main(String[] args) {
+        String value = "hello world";
+        String searchValue = "world";
+
+        int index = findFirstIndex(value, searchValue);
+        System.out.println("Index of first occurrence: " + index);
+    }
+
+    public static int findFirstIndex(String value, String searchValue) {
+              return value.indexOf(searchValue);
+    }
+}

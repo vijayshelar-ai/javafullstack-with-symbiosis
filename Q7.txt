@@ -1,0 +1,39 @@
+//check if a number is a palindrome or not
+
+import java.util.Scanner;
+
+public class palindrome {
+	
+	public static boolean ispalindrome(int number) {
+		int orignalnumber = number;
+		int reversednumber = 0;
+		
+		while(number>0) {
+			int digit = number % 10;
+			reversednumber = reversednumber * 10 + digit;
+			number = number / 10;	
+		}
+		return orignalnumber == reversednumber;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("enter number to check palindrome number :");
+		int number = sc.nextInt();
+		
+		//check if the number is a palindrome
+		boolean ispalindrome = ispalindrome(number);
+		
+		if(ispalindrome) {
+			System.out.println(number + " number is palindrome.");
+		}
+		else {
+			System.out.println(number + " number is not palindrome.");
+		}
+
+	}
+
+}

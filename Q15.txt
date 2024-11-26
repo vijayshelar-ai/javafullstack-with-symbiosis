@@ -1,0 +1,43 @@
+//finding minimum and maximum number from given array
+
+import java.util.Scanner;
+public class MinMaxArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("enter elemnts of an array:");
+		int ele = sc.nextInt();
+		
+		int array[] = new int[ele];
+		System.out.println("enter value for an array:");
+		for(int i=0; i<ele; i++) {
+			array[i] = sc.nextInt();
+		}
+		
+		System.out.println("orignal array:");
+		for(int i=0; i<ele; i++) {
+		System.out.println(array[i]);
+		}
+		
+		//initialize max and mini with the first element of the array
+		int max= array[0];
+		int mini=array[0];
+		
+		//for loop for finding maximum and minimum number
+		for(int i=0; i<ele; i++) {
+			//we use 2 if condition because we want check two condition of one time both maximum and minimum
+			if(array[i]>max) {
+				max=array[i];
+			}
+			if(array[i]<mini) {
+				mini=array[i];
+			}
+		}
+		System.out.println("the maximum number of given array is: "+max);
+		System.out.println("the minimum number of given array is: "+mini);
+	}
+
+}

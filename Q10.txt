@@ -1,0 +1,51 @@
+//calculate grades based on student marks 
+
+import java.util.Scanner;
+
+public class calculatemarks {
+	
+	public static char calculategrads(int marks) {
+		if(marks<0 || marks>100) {
+			return 'I';
+		}
+		
+		else if(marks>=90) {
+			return 'A';
+		}
+		
+		else if(marks>=70) {
+			return 'B';
+		}
+		
+		else if(marks>=50) {
+			return 'C';
+		}
+		
+		else if(marks>=40) {
+			return 'D';
+		}
+		
+		else {
+			return 'F';
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("enter marks of Student's:");
+		int marks= sc.nextInt();
+		
+		
+        char grads = calculategrads(marks);
+		if(grads == 'I') {
+			System.out.println("invalid marks. pleace enter marks between 1 to 100: ");
+		}
+		else {
+			System.out.println("the student's grade is: "+grads);
+		}
+	}
+
+}

@@ -1,0 +1,35 @@
+//calculate the factorial of a given number
+
+import java.util.Scanner;
+
+public class factorial {
+	
+	//method to calculate factorial
+	 public static long calculatefactorial(int n) {
+	        if (n < 0) {
+	            return -1; 
+	        }
+	        
+	        long result = 1;
+	        for (int i = 1; i <= n; i++) {
+	            result = result * i;
+	        }
+	        return result;
+	    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a positive integer: ");
+        int number = sc.nextInt();
+        
+        //for calculating factorial
+        long factorial = calculatefactorial(number);
+        
+        System.out.println("the factorial of "+number+ " is "+factorial);
+
+	}
+
+}

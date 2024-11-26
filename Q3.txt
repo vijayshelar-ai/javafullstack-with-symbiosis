@@ -1,0 +1,37 @@
+//Swap two numbers using call by value ,call by reference and without using 3rd variable
+
+public class swap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a=5, b=10;
+		System.out.println("before swapping: a = "+a+ ", b = "+b);
+		
+		//without using third variable
+		 a = a + b;
+	     b = a - b;
+	     a = a - b;
+	        
+		System.out.println("after arithmatic swap: a = " +a+ ", b = "+b);
+		
+		//reset value for call y reference 
+		a=5;
+		b=10;
+		
+		int[] numbers = {a,b};
+		swaparr(numbers);
+		
+		System.out.println("after array swap :  a = "+numbers[0]+ " b = "+numbers[1]);
+	}
+	
+	//method to swap values array using call by 
+
+	public static void swaparr(int[] arr) {
+		int temp = arr[0];
+		arr[0] = arr[1];
+		arr[1] = temp;
+		
+	}
+
+}

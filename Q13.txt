@@ -1,0 +1,34 @@
+//sort an array in ascending order
+
+import java.util.Scanner;
+
+public class sortarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("enter elements for an array");
+        int elements = sc.nextInt();
+        
+        int[] array = new int[elements];
+        
+        System.out.println("enter "+elements+ " values for an array");
+        for(int i=0; i<elements; i++) {
+        	array[i] = sc.nextInt();
+        }
+        
+        for(int i=0; i<elements; i++) {
+        	System.out.println(array[i]);
+        }
+        
+        Arrays.sort(array);
+        
+        System.out.println("array sorted in ascending order:");
+        for(int i=0; i<elements; i++) {
+        	System.out.println(array[i]+" ");
+        }
+	}
+
+}

@@ -1,0 +1,94 @@
+//write a program to accept data like empId, name, salary and location depending on the users choice, searching for a particular employee from the collection if employee.
+
+import java.util.*;
+
+class Employee {
+	
+	int empId;
+	String name;
+	double salary;
+	String location;
+
+	public Employee(int empId, String name, double salary, String location) {
+		this.empId=empId;
+		this.name=name;
+		this.salary=salary;
+		this.location=location;
+	}
+	
+	public int getEmpID() { return empId; }
+	public String getName() { return name; }
+	public double getSalary() { return salary; }
+	public String getLocation() { return location; }
+	
+	public String toString() {
+		return "Employee[ID="+empId+", Name="+name+", Salary="+salary+", Location="+location+"]";
+	}
+
+}
+public class EmployeeManagement {
+	
+	private static ArrayList<Employee> eList= new ArrayList<Employee>();
+	
+	public static void addEmployee() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter employee ID: ");
+		int empId = sc.nextInt();sc.nextLine();
+		
+		System.out.println("enter employee name: ");
+		String name = sc.nextLine();
+		
+		System.out.println("enter salary of employee: ");
+		double salary = sc.nextDouble();sc.nextLine();
+		
+		System.out.println("enter employee location: ");
+		String location = sc.nextLine();
+		
+		Employee emp = new Employee(empId, name, salary, location);
+		eList.add(emp);
+		System.out.println("employee added successfully\n");
+	}
+	
+	public static void searchEmployee(int empId) {
+		for(Employee emp : eList) {
+			if(emp.getEmpID() == empId) {
+				System.out.println("employee found: "+emp);
+				return;
+			}
+		}
+		System.out.println("employee not found"+empId);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		
+		do {
+			System.out.println("1. add employee");
+			System.out.println("2. search employee by ID");
+			System.out.println("3. Exit");
+			System.out.println("enter your Choice");
+			choice= sc.nextInt();
+			
+			switch(choice) {
+			case 1: addEmployee();
+			        break;
+			        
+			case 2: System.out.println("enter employee ID to search: ");
+			        int empId = sc.nextInt();
+			        searchEmployee(empId);
+			        break;
+			        
+			case 3: System.out.println("Exiting.......");
+			        break;
+			        
+			default : System.out.println("Invalid choice \nplease try again.");
+			        
+			}
+		} while (choice != 3);
+		  sc.close();
+	}
+
+}

@@ -1,0 +1,52 @@
+//create a Hash table for a student data like Student name, rollNo, DOB, course enrollment where rollNo key for a rollNo and print the hash table.
+import java.util.*;
+
+class student{
+	private String name;
+	private String dob;
+	private String course;
+	
+	public student(String name ,String dob, String course) {
+		this.name=name;
+		this.dob=dob;
+		this.course=course;
+	}
+	
+	@Override
+	public String toString() {
+		return "Name: "+name+", DOB "+dob+", course "+course;
+	}
+}
+
+public class studentHashTable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap<Integer, student> stuHashMap= new HashMap<Integer, student>();
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("enter details of 3 student:");
+		for(int i=1; i<=3; i++) {
+			System.out.println("enter details for student: "+i); 
+			System.out.println("Roll No: ");
+			int rollNo = sc.nextInt(); sc.nextLine();
+			
+			System.out.println("enter name:");
+			String name = sc.nextLine();
+			
+			System.out.println("enter date of birth:");
+			String dob= sc.nextLine();
+			
+			System.out.println("enter course:");
+			String course = sc.nextLine();
+			
+			student stu = new student(name, dob, course);
+			stuHashMap.put(rollNo, stu);
+		}
+		
+		System.out.println("\nStudent data in Hash Table:");
+		for(Map.Entry<Integer, student> entry: stuHashMap.entrySet()) {
+			System.out.println("Roll no: "+ entry.getKey() +"->"+entry.getValue());
+		}
+	}
+}

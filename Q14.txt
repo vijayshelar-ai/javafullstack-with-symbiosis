@@ -1,0 +1,55 @@
+//addition of 2D matrices
+
+import java.util.Scanner;
+public class twoDmatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc= new Scanner(System.in);
+		
+		//getting rows and columns for 2 matrix
+		System.out.println("enter the number of rows :");
+		int rows = sc.nextInt();
+		System.out.println("enter the number of columns :");
+		int cols = sc.nextInt();
+		
+		//declaring two matrices
+		int matrix1[][] = new int[rows][cols];
+		int matrix2[][] = new int[rows][cols];		
+
+		//declaring result matrix for store addition 2 matrices in that matrix
+		int resultmatrix[][] = new int[rows][cols];
+		
+		//getting elements(value) for matrix1 and matrix2
+		System.out.println("enter the elements for the first matrix 1:");
+		for(int i=0; i<rows; i++) {
+			for(int j=0; j<cols; j++) {
+				matrix1[i][j] = sc.nextInt(); 
+			}
+		}
+		
+		System.out.println("enter the elements for the first matrix 2:");
+		for(int i=0; i<rows; i++) {
+			for(int j=0; j<cols; j++) {
+				matrix2[i][j] = sc.nextInt(); 
+			}
+		}
+		
+		//calculating addition 
+		for(int i=0; i<rows; i++) {
+			for(int j=0; j<cols; j++) {
+				resultmatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+			}
+		}
+		
+		//for printing addition 
+		System.out.println("the addition of two matrices is: ");
+		for(int i=0; i<rows; i++) {
+			for(int j=0; j<cols; j++) {
+				System.out.print(resultmatrix[i][j]);
+			}
+			System.out.println();	
+		}	
+	}
+}

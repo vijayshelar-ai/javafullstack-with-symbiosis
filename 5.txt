@@ -1,0 +1,29 @@
+//Given an Integer Array, Find the Value Zero and Move it to the End of the Array While Maintaining the Relative Order of Non-Zero Elements
+
+public class MoveZeroesToEnd {
+    public static void main(String[] args) {
+        int[] array = {0, 1, 0, 3, 12};
+
+        moveZeroes(array);
+
+        System.out.print("Array after moving zeroes to the end: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void moveZeroes(int[] array) {
+        int nonZeroIndex = 0; 
+       
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != 0) {
+                array[nonZeroIndex] = array[i];
+                nonZeroIndex++;
+            }
+        }
+
+        for (int i = nonZeroIndex; i < array.length; i++) {
+            array[i] = 0;
+        }
+    }
+}

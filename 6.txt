@@ -1,0 +1,30 @@
+//Example: Input: (1,0,2,0,3), Output: 1,2,3,0,0
+
+
+public class MoveZeroesToEnd {
+    public static void main(String[] args) {
+        int[] array = {1, 0, 2, 0, 3};
+
+        moveZeroes(array);
+
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void moveZeroes(int[] array) {
+        int index = 0; 
+
+        for (int num : array) {
+            if (num != 0) {
+                array[index] = num;
+                index++;
+            }
+        }
+
+        while (index < array.length) {
+            array[index] = 0;
+            index++;
+        }
+    }
+}

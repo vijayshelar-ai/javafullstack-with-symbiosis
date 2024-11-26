@@ -1,0 +1,37 @@
+//Find the Minimum and Maximum Element with their Index Number from Given Array
+
+public class MinMaxInArray {
+    
+    public static void findMinMax(int[] array) {
+        if (array == null || array.length == 0) {
+            System.out.println("Array is empty");
+            return;
+        }
+
+        int min = array[0];
+        int max = array[0];
+        int minIndex = 0;
+        int maxIndex = 0;
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+                minIndex = i;
+            }
+            if (array[i] > max) {
+                max = array[i];
+                maxIndex = i;
+            }
+        }
+
+        System.out.println("Minimum Element: " + min + " at Index: " + minIndex);
+        System.out.println("Maximum Element: " + max + " at Index: " + maxIndex);
+    }
+
+public static void main(String[] args) {
+        int[] array = {15, 3, 9, 7, 12, 55, 1, 18};
+
+        findMinMax(array);
+    }
+
+}

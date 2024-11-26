@@ -1,0 +1,23 @@
+//ASCII value of given character
+
+import java.util.Scanner;
+
+public class asciivalue {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+	
+		System.out.print("enter character : ");
+		char character = sc.next().charAt(0);
+		
+		//find ASCII value of character 
+		int asciivalue = (int) character;
+		
+		//print ASCII value of character
+		System.out.println("the ASCII value of "+character+ " is :"+asciivalue);	
+
+	}
+
+}

@@ -1,0 +1,32 @@
+//Given an Array of Integers and One Integer Value as Target Sum, Return the Indexes of Two Elements that Add Up to the Target Value
+
+
+import java.util.HashMap;
+
+public class TwoSum {
+    public static void main(String[] args) {
+        int[] array = {2, 7, 11, 15};
+        int target = 9;
+
+        int[] result = findTwoSum(array, target);
+        if (result != null) {
+            System.out.println("Indexes: " + result[0] + " and " + result[1]);
+        } else {
+            System.out.println("No two elements add up to the target value.");
+        }
+    }
+
+    public static int[] findTwoSum(int[] array, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < array.length; i++) {
+            int complement = target - array[i];
+
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+
+            map.put(array[i], i);
+        }
+        return null;     }
+}

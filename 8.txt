@@ -1,0 +1,17 @@
+//Example: ("Aditya", "Sunny")—2nd string starts with 'h', search it in the 1st string.
+
+
+public class FindCharIndex {
+    public static void main(String[] args) {
+        String value = "Aditya";
+        String searchValue = "Sunny";
+
+        int index = findFirstCharIndex(value, searchValue);
+        System.out.println("Index of first character of searchValue in value: " + index);
+    }
+
+    public static int findFirstCharIndex(String value, String searchValue) {
+        char firstChar = searchValue.charAt(0);
+        return value.indexOf(firstChar);
+    }
+}
